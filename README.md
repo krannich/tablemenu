@@ -61,9 +61,11 @@ You have to provide a corresponding value in the el_data set.
 
 ## 2. Init plugin:
 
+<script type="text/javascript">
 $(document).ready(function() {
    $('#invoices_table').tablemenu(invoice_menu);
 });
+</script>
 
 You have to pass the menu variable to the tablemenu function.
 
