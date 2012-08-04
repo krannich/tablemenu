@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+    <title>Tablemenu demo</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="external/jquery.min.js"></script>
+    <script type="text/javascript" src="external/bootstrap.min.js"></script>
+    <script type="text/javascript" src="external/bootbox.min.js"></script>
+    
+    <script type="text/javascript" src="dk.tablemenu.js"></script>
+    
+    <link rel="stylesheet" href="external/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="external/font-awesome.css" type="text/css">
+    
+    <link rel="stylesheet" href="dk.tablestyles.css" type="text/css">
+    <link rel="stylesheet" href="dk.bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="dk.tablemenu.css" type="text/css">
+    
+    <script type="text/javascript">
+
+    var invoice_menu = {
+
+	    'width'         :   265,
+	    'column'        :   2,
+	    'position'      :   'right',
+	
+	    'menu_items'    : {
+	
+	        'del' : {
+	            'url'           :   'delete/',
+	            'title'         :   'delete',
+	            'icon'          :   'icon-remove icon-big icon-red',
+	            'confirm'       :   'Do you want to delete <strong>invoice $(id)</strong> of cutsomer <strong>$(customer)<\/strong>?',
+	            
+	        },
+	
+	        'paid' : {
+	            'url'           :   'pay/',
+	            'title'         :   'pay',
+	            'icon'          :   'icon-money icon-big',
+	            'confirm'       :   'Is <strong>invoice $(id)</strong> of customer <strong>$(customer)<\/strong> paid?',
+	            
+	        },      
+	        
+	        'email' : {
+	            'url'           :   'email/',
+	            'title'         :   'send PDF',
+	            'icon'          :   'icon-envelope icon-big',
+	            
+	        },
+	        
+	        'serial' : {
+	            'url'           :   'serial/',
+	            'title'         :   'serialno',
+	            'icon'          :   'icon-barcode icon-big',
+	            
+	        },
+	
+	        
+	        'edit' : {
+	            'url'           :   'edit/',
+	            'title'         :   'edit',
+	            'icon'          :   'icon-pencil icon-big',
+	
+	        },
+	        
+	        'print' : {
+	            'url'           :   'print/',
+	            'title'         :   'print PDF',
+	            'icon'          :   'icon-print icon-big',
+	            
+	        },
+	
+	    },
+    };
+
+    $(document).ready(function() {
+
+   		$('#invoices_table').tablemenu(invoice_menu);
+
+         
+    });
+
+    </script>
+    <style type="text/css">
+
+    * {
+    -webkit-font-smoothing: antialiased !important; 
+    }
+
+    </style>
+
+</head>
+
+<body>
+    <table id="invoices_table" class="tablesorter">
+        <colgroup>
+            <col width="120">
+            <col width="120">
+            <col>
+            <col width="120">
+        </colgroup>
+
+        <thead>
+            <tr>
+                <th>Date</th>
+
+                <th>Invoice-No.</th>
+
+                <th>Customer</th>
+
+                <th>Sum</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr el_data="{'id':'11567', 'customer':'Mr. Müller'}" el_options="{'print':1, 'paid':1, 'email':1, 'serial':1, 'del':0,'edit':1}">
+                <td class="tdc">03.08.2012</td>
+
+                <td class="tdc">011567</td>
+
+                <td><b>Müller</b>, Mr.</td>
+
+                <td class="tdr"><b>100,00 €</b></td>
+            </tr>
+
+            <tr el_data="{'id':'11566', 'customer':'Fam. Meier'}" el_options="{'print':1, 'paid':1, 'email':1, 'serial':1, 'del':1,  'edit':1}">
+                <td class="tdc">03.08.2012</td>
+
+                <td class="tdc">011566</td>
+
+                <td><b>Meier</b>, Fam.</td>
+
+                <td class="tdr"><b>200,00 €</b></td>
+            </tr>
+
+            <tr el_data="{'id':'11565', 'customer':'Mrs. Schulze'}" el_options="{'print':1, 'paid':1, 'email':1, 'serial':1,  'del':1, 'edit':1}">
+                <td class="tdc">03.08.2012</td>
+
+                <td class="tdc">011565</td>
+
+                <td><b>Schulze</b>, Mrs.</td>
+
+                <td class="tdr"><b>400,00 €</b></td>
+            </tr>
+
+            <tr el_data="{'id': '11564', 'customer':'Mr. Max Musterman'}" el_options="{'print':1, 'paid':1, 'email':1, 'serial':1,  'del':1, 'edit':1}">
+                <td class="tdc">03.08.2012</td>
+
+                <td class="tdc">011564</td>
+
+                <td><b>Mustermann</b>, Mr. Max</td>
+
+                <td class="tdr"><b>300,00 €</b></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
