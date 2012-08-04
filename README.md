@@ -9,11 +9,10 @@ jQuery plugin using Bootstrap, Font Awesome and Bootbox.js
 
 var invoice_menu = {
 	'width'         :   265,
-	    'column'        :   2,
-	    'position'      :   'right',
+	'column'        :   2,
+	'position'      :   'right',
 	
-	    'menu_items'    : {
-	
+	'menu_items'    : {
 	  	'del' : {
 	            'url'           :   'delete/',
 	            'title'         :   'delete',
