@@ -5,7 +5,7 @@ jQuery plugin using Bootstrap, Font Awesome and Bootbox.js
 
 
 
-# Define your context menu:
+## Define your context menu:
 
 var invoice_menu = {
 	'width'         :   265,
@@ -26,7 +26,7 @@ var invoice_menu = {
 
 
 
-# Init plugin:
+## Init plugin:
 
 $(document).ready(function() {
    $('#invoices_table').tablemenu(invoice_menu);
