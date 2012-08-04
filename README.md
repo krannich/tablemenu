@@ -39,9 +39,20 @@ The column defines where the context menu is attached to. The first column is 0!
 This flag defines the position of the context menu. The following values are available: left, right, before, after. 
 
 - menu_items:
-Here you can define your context menu items. Give each item a unique name and specify the required parameters (url, title and icon). 
+Here you can define your context menu items. Give each item a unique name and specify the required parameters (url, title and icon).
 
--- confirm:
+A menu_item consists of the following flags:
+
+- url:
+You can specify any url you want. An ID is added automatically. You have to specify the ID in the table's el_data attribute.
+
+- title:
+Each button can have a title. The title is provided as a tooltip by using Twitter Bootstrap
+
+- icon:
+Here you define the styles of the buttons by providing the corresponding Twitter Bootstrap class names. You can combine several class names. (in dk.bootstrap.css you can find some additional button styles (e.g. sizes and colors).)
+
+- confirm:
 If you want, you can add an optional confirm dialog, before the action is triggered. You can insert placeholders for dynamic values. A placeholder looks like this: $(customer)
 You have to provide a corresponding value in the el_data set.
 
@@ -51,6 +62,8 @@ You have to provide a corresponding value in the el_data set.
 $(document).ready(function() {
    $('#invoices_table').tablemenu(invoice_menu);
 });
+
+You have to pass the menu variable to the tablemenu function.
 
 
 ## 3. Setup you data table
