@@ -15,6 +15,7 @@ Working with this plugin is as easy as 1-2-3:
 
 ## 1. Define your context menu:
 
+<script type="text/javascript">
 var invoice_menu = {
 	'width'				:   265,
 	'column'			:   2,
@@ -28,6 +29,7 @@ var invoice_menu = {
 		}
 	}
 }
+</script>
 
 - width: 
 You can specify a width (in px) of the context menu. If you do not provide this information, the width is calculated automatically.
