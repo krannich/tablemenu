@@ -30,6 +30,7 @@ Work: http://krannich.de
 				button_width : 45,
 				column: 0,
 				position: 'left',
+				trigger: 'mouseenter',
 			};
 			
 			var settings = $.extend(defaults, options);
@@ -56,7 +57,7 @@ Work: http://krannich.de
 					}
 				});
 				
-				items.mouseenter(function(e) {
+				items.bind(settings.trigger, function(e) {
 
 					var menu_items = settings.menu_items;
 					var control_width;
